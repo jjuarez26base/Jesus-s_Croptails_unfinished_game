@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgs6wp3alcmsv"]
+
+[ext_resource type="Script" uid="uid://36mxws7kx07x" path="res://Croptails_scenes/components/test_scene_enable_tool_buttons_component.gd" id="1_uapb1"]
+
+[node name="TestSceneEnableToolButtonsComponent" type="Node"]
+script = ExtResource("1_uapb1")

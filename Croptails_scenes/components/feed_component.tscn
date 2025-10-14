@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6fih2jslx7hb"]
+
+[ext_resource type="Script" uid="uid://bdc77iy5tdw43" path="res://Croptails_scenes/components/feed_component.gd" id="1_shjfb"]
+
+[node name="FeedComponent" type="Area2D"]
+collision_layer = 16
+collision_mask = 128
+script = ExtResource("1_shjfb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

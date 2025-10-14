@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://rl6b62nxeecm"]
+
+[ext_resource type="Script" uid="uid://cxnl0fgms23j7" path="res://Croptails_scenes/objects/Plants/corn.gd" id="1_cep5m"]
+[ext_resource type="Texture2D" uid="uid://wl7qv3hq15wc" path="res://Croptails_assets/game/objects/basic_plants.png" id="1_omhl8"]
+[ext_resource type="PackedScene" uid="uid://d3ctiikw60m0t" path="res://Croptails_scenes/objects/Plants/watering_particles.tscn" id="2_x1c0t"]
+[ext_resource type="PackedScene" uid="uid://bq6sj8idafqnp" path="res://Croptails_scenes/components/hurt_component.tscn" id="3_vcbcs"]
+[ext_resource type="PackedScene" uid="uid://cyjxecskc70cr" path="res://Croptails_scenes/objects/Plants/flowering_particles.tscn" id="3_x1c0t"]
+[ext_resource type="PackedScene" uid="uid://q85js00v18t2" path="res://Croptails_scenes/objects/Plants/growth_cycle_component.tscn" id="5_fwb8j"]
+[ext_resource type="PackedScene" uid="uid://buae50gert8pe" path="res://Croptails_scenes/components/save_data_component.tscn" id="7_fwb8j"]
+[ext_resource type="Resource" uid="uid://c6uvvqh4a8jxt" path="res://resources/scene_data_resource.tres" id="8_vtsug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4win0"]
+size = Vector2(12, 8)
+
+[node name="Corn" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_cep5m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("1_omhl8")
+hframes = 6
+vframes = 2
+frame = 1
+
+[node name="WateringParticles" parent="." instance=ExtResource("2_x1c0t")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_x1c0t")]
+position = Vector2(0, -4)
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("5_fwb8j")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("3_vcbcs")]
+position = Vector2(0, -4)
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_4win0")
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("7_fwb8j")]
+save_data_resource = ExtResource("8_vtsug")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://hydekses46r0"]
+
+[ext_resource type="Texture2D" uid="uid://wl7qv3hq15wc" path="res://Croptails_assets/game/objects/basic_plants.png" id="1_eawr1"]
+[ext_resource type="PackedScene" uid="uid://78ia88bq8t1g" path="res://Croptails_scenes/components/collectable_component.tscn" id="2_o0pr1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1e0tr"]
+radius = 7.0
+
+[node name="TomatoeHarvest" type="Sprite2D"]
+y_sort_enabled = true
+texture = ExtResource("1_eawr1")
+hframes = 6
+vframes = 2
+frame = 11
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_o0pr1")]
+collision_layer = 160
+collectable_name = "tomatoe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_1e0tr")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://78ia88bq8t1g"]
+
+[ext_resource type="Script" uid="uid://dj1jfh0wyjcut" path="res://Croptails_scenes/components/collectable_component.gd" id="1_xl2j6"]
+
+[node name="CollectableComponent" type="Area2D"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_xl2j6")
+collectable_name = "log"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

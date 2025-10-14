@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://buae50gert8pe"]
+
+[ext_resource type="Script" uid="uid://ckn1lr8wnxg1m" path="res://Croptails_scenes/components/save_data_component.gd" id="1_xnmwy"]
+
+[node name="SaveDataComponent" type="Node"]
+script = ExtResource("1_xnmwy")
